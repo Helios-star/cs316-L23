@@ -3,7 +3,7 @@ let text_in = document.getElementById("name");
 
 async function new_directory(){
     //Write here
-    const name = text_in.value();
+    const name = text_in.value;
     const response = await fetch('/mkdir' + name);
     output.textContent = await response.text();
 }
