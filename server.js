@@ -8,11 +8,17 @@ const server = http.createServer((req, res) => {
         let css_file = fs.readFileSync('style.css');
         res.write(css_file);
         res.end();
-    } else if (req.url === '/script.js') {
+    }
+    else if (req.url === '/script.js') {
         // Content-tyoe defaults to js
         res.end(fs.readFileSync('script.js'));
-        
-    } else {
+
+    } 
+    else if (req.url.startsWith('/mkdir')) {
+        const name = req.url.split('/')[2];
+        fs.mkdir(name);
+    } 
+    else {
         res.writeHead(200, {'Content-type': 'text/html'});
         res.end(fs.readFileSync('index.html'));
     }
