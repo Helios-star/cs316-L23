@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
     else if (req.url.startsWith('/mkdir')) {
         const name = req.url.split('/')[2];
         fs.mkdir(name, (error) => {
-            res.end(error ? 'Error: ' + error.message : 'Folder: ' + name + ' made');
+            res.end(error ? 'Error: ' + error.message() : 'Folder: ' + name + ' made');
         });
     } 
     else {
