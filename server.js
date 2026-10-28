@@ -6,6 +6,8 @@ const server = http.createServer((req, res) => {
     if (req.url == '/style.css') {
         res.writeHead(200, {'Content-Type': 'text/css'});
         let css_file = fs.readFileSync('style.css');
+        res.write(css_file);
+        res.end();
     }
 });
 
