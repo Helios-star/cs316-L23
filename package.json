@@ -5,7 +5,7 @@
     "scripts": {
         "start": "node server.js"
     },
-    "author": "Your Name",
+    "author": "Payton Peckenpaugh",
     "repository": {
         "type": "git",
         "url": "Link Here"
